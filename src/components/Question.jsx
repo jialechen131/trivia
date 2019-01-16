@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Answer from "./Answer.jsx";
 // import components
 
 
@@ -7,7 +8,12 @@ class Question extends Component {
   render() {
     return (
       <div>
-        Add your QuestionText, Reset Button and AnswerButtons here.  
+      <h1>Question</h1>
+       <Answer />
+       <Answer />
+       <Answer />
+       <Answer />
+        
       </div>
     );
   }
