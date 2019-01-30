@@ -4,19 +4,34 @@ import Answer from "./Answer.jsx";
 
 
 class Question extends Component {
-  
-  render() {
-    return (
-      <div>
-      <h1>Question</h1>
-       <Answer />
-       <Answer />
-       <Answer />
-       <Answer />
+
+    render() {
+        var answers;
         
+        if (this.props.answers){
+            answers = this.props.answers
+            .map(
+                answerText=> (
+                    <Answer answerText={answerText} />
+                ) 
+       
+            )
+            
+        }
+
+        return (
+
+
+     <div >
+     
+      <h1 className = {this.props.className + " title"} >
+        {this.props.questionText}
+      </h1>
+      {answers}
+    
       </div>
-    );
-  }
+        );
+    }
 }
 
 export default Question;

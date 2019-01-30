@@ -17,7 +17,7 @@ Goal: Set up your project and view the live running app.
 - [] Use any remaining time to style your app in App.css
 
 ====
-### Day 2 Creating Components and Component Layout
+### Day 2 Creating Components and Component Layout 
 Goal: Set up your your components
 
 - [ ] In your App.jsx file import the Question Component
