@@ -11,12 +11,15 @@ class Question extends Component {
         if (this.props.answers){
             answers = this.props.answers
             .map(
-                answerText=> (
-                    <Answer answerText={answerText} />
+                answerText => (
+                    <Answer
+                        answerText={answerText}
+                        onClick={() => {
+                            console.log("answer");
+                        }}
+                    />
                 ) 
-       
             )
-            
         }
 
         return (
