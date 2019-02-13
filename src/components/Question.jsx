@@ -7,13 +7,17 @@ class Question extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            answer : "" 
+            answer : "",
+            gotItRight: undefined
         };
     }
     onAnswerClick(answerText){
         console.log("click",answerText);
         
         console.log("Is the right?: ", answerText == this.props.correctAnswer);
+        this.setState({
+            gotItRight: answerText == this.props.correctAnswer
+        });
     }
     render() {
         var answers;
@@ -38,6 +42,7 @@ class Question extends Component {
                     {this.props.questionText}
                 </h1>
                 {answers}
+                {this.state.gotItRight}
             </div>
         );
     }
