@@ -8,7 +8,7 @@ import ResetBtn from "./ResetBtn.jsx";
 var question1 = {
     text: "Do you like dogs?",
     answers: ["yes", "no", "maybe"],
-    correctAnswer: "no"
+    correctAnswer: "yes"
 };
 
 var question2 = {

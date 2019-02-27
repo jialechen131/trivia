@@ -15,3 +15,11 @@ body {
   color:red;
 }
 
+.correct{
+  
+  background-color: green;
+}
+
+.incorrect{
+  background-color:red;
+}
