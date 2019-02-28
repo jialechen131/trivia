@@ -12,10 +12,10 @@ class Question extends Component {
         };
     }
     onAnswerClick(answerText) {
-        var gotItRight = answerText == this.props.correctAnswer;
+        var gotItRight = answerText === this.props.correctAnswer;
         console.log("click", answerText);
 
-        console.log("Is the right?: ", answerText == this.props.correctAnswer);
+        console.log("Is the right?: ", answerText === this.props.correctAnswer);
         this.setState({
             gotItRight: gotItRight
         });
@@ -32,7 +32,6 @@ class Question extends Component {
     
         
         if (this.props.answers) {
-            
             answers = this.props.answers
                 .map(
                     answerText => (
@@ -53,9 +52,9 @@ class Question extends Component {
                     {this.props.questionText}
                 </h1>
                 {answers}
-                    {this.state.gotItRight != undefined && (
-                        <div className={this.state.gotItRight == true?"correct":"incorrect"}>You got it  
-                            {this.state.gotItRight == true
+                    {this.state.gotItRight !== undefined && (
+                        <div className={this.state.gotItRight != true?"incorrect":"correct"}>You got it  
+                            {this.state.gotItRight === true
                             ?" right!"
                             :" wrong!"}
                  
@@ -67,6 +66,6 @@ class Question extends Component {
     }
 }
 
-
-
+ 
 export default Question;
+
