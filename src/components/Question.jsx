@@ -11,7 +11,7 @@ class Question extends Component {
             gotItRight: undefined
         };
     }
-    onAnswerClick(answerText) {
+    onAnswerClick = (answerText)=> {
         var gotItRight = answerText === this.props.correctAnswer;
         console.log("click", answerText);
 
@@ -27,9 +27,22 @@ class Question extends Component {
         //     alert("you got it wrong!")
         // }
     }
+    
+    onNextQuestion = () => { 
+      this.props.goToNextQuestion();
+      this.resetQuestion();
+    }
+    
+    resetQuestion = () => { 
+        this.setState({
+            answer: "",
+            gotItRight: undefined
+        });
+    }
+    
     render() {
         var answers;
-    
+        var userPickedAnswer = this.state.gotItRight !== undefined;
         
         if (this.props.answers) {
             answers = this.props.answers
@@ -41,6 +54,7 @@ class Question extends Component {
                             console.log(answerText);
                             this.onAnswerClick(answerText);
                         }}
+                        disabled ={userPickedAnswer}
                     />
                     )
                 );
@@ -52,13 +66,16 @@ class Question extends Component {
                     {this.props.questionText}
                 </h1>
                 {answers}
-                    {this.state.gotItRight !== undefined && (
+                    {userPickedAnswer && (
+                    <div>
                         <div className={this.state.gotItRight != true?"incorrect":"correct"}>You got it  
                             {this.state.gotItRight === true
                             ?" right!"
-                            :" wrong!"}
-                 
+                            :" wrong!"
+                            }
                         </div>
+                         <button onClick={this.onNextQuestion} className="btn btn-primary">Go to Question {this.props.currentQuestionNum +1} </button>
+                    </div>
                     )}
                    
             </div>
@@ -69,3 +86,4 @@ class Question extends Component {
  
 export default Question;
 
+// ternary operator
