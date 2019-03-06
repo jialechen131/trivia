@@ -59,7 +59,7 @@ class App extends Component {
                 currentQuestionNum={this.state.currentQuestionNum}
             />
             )
-            :" wrong!"
+            : "You have completed the Quiz! Congrats"
             }
       </div>
         );
