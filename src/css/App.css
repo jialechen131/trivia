@@ -5,6 +5,7 @@ body {
 
 .app {
   text-align: center;
+  margin-top: 21%;
 }
 
 .questionOne{
@@ -17,9 +18,13 @@ body {
 
 .correct{
   
-  background-color: green;
+  color: #73e27b;
 }
 
 .incorrect{
-  background-color:red;
+  color:#e21b1b;
 }
+body{
+  background:url("https://images.wallpaperscraft.com/image/sea_horizon_dawn_133461_1920x1080.jpg") no-repeat center center fixed;
+}
+

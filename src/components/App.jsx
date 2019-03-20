@@ -4,12 +4,13 @@ import Question from "./Question.jsx";
 import { Button } from 'react-bootstrap';
 import Answer from "./Answer.jsx";
 import ResetBtn from "./ResetBtn.jsx";
-// import { Button } from 'react-bootstrap';
-// import components
+import $ from "jquery";
+
+
 var question1 = {
     text: "Is 1 + 1 = 2?",
-    answers: ["yes", "no", "maybe"],
-    correctAnswer: "yes"
+    answers: ["Yes", "No", "Maybe"],
+    correctAnswer: "Yes"
 };
 
 var question2 = {
@@ -17,6 +18,14 @@ var question2 = {
     answers: ["1", "2", "3", "4"],
     correctAnswer: "4"
 };
+
+// var question3 ={
+//      text:"",
+//      answers:"",
+//      correctAnswer:""
+// };
+
+
 
 var questions = [question1, question2];
 
@@ -43,7 +52,7 @@ class App extends Component {
         var currentQuestionObj = {
             text: currentQuestion.text,
             answers: currentQuestion.answers,
-            correctAnswer: currentQuestion.correctAnswer
+            correctAnswer: currentQuestion.correctAnswer,
         };
         return (
 
